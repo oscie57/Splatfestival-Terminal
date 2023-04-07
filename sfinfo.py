@@ -16,7 +16,7 @@ class Form(QDialog):
 
         self.fesdata = self.get_fesdata()
 
-        self.paneltext1 = QLabel(f"{self.fesdata['Teams'][0]['Name']} vs {self.fesdata['Teams'][1]['Name']}", self)
+        self.paneltext1 = QLabel(f"{self.fesdata['Teams'][0]['Name']} vs {self.fesdata['Teams'][1]['Name']} ({self.fesdata['FestivalId']})", self)
         self.paneltext_startdate = QLabel(self.fesdata['TimeStart'], self)
         self.paneltext_enddate = QLabel(self.fesdata['TimeEnd'], self)
 
@@ -107,6 +107,8 @@ class Form(QDialog):
         fesdata()
 
         QMessageBox.information(self, "Downloaded Files", "Restart the application to view the\nlatest Splatfest information.")
+
+        sys.exit(app.exec())
 
     def get_fesdata(self):
 
