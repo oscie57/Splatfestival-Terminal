@@ -32,7 +32,7 @@ class Form(QDialog):
         self.stage2 = StageListing(f'./img/stages/{self.fesdata["Stages"][1]}.png', gamedata("stage", self.fesdata["Stages"][1]), 0.6)
         self.stage3 = StageListing(f'./img/stages/{self.fesdata["Stages"][2]}.png', gamedata("stage", self.fesdata["Stages"][2]), 0.6)
 
-        self.rulesinfo = DisplayRule(f'./img/rules/{self.fesdata["Rule"]}.png', gamedata("rule", self.fesdata["Rule"]), 2.0)
+        self.rulesinfo = DisplayRule(f'./img/rules/{self.fesdata["Rule"]}.png', gamedata("rule", self.fesdata["Rule"]), 0.6 if self.fesdata["Rule"] == "cPnt" else 2.0)
 
         self.button_update = QPushButton("Update Files", self)
         self.button_update.setFixedSize(200, 30)
